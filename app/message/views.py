@@ -8,6 +8,7 @@ from rest_framework import mixins
 from rest_framework import generics
 
 from message.models import Message
+from invitee.models import Invitee
 from message.serializers import MessageSerializer
 
 
@@ -30,6 +31,6 @@ class MessageList(APIView):
 
 class MessageThread(APIView):
     def get(self, request, otherPartyID):
-        messages = Message.objects.all()
+        messages = Message.objects.filter(otherParty=Invitee(id=otherPartyID))
         serializer = MessageSerializer(messages, many=True)
         return Response(serializer.data)

@@ -32,8 +32,9 @@ cd hitched/
 pip remove gunicorn
 pip3 install -r requirements.txt
 sudo apt-get install supervisor
-
 sudo cp app/gunicorn_supervisord.conf /etc/supervisor/conf.d/gunicorn_supervisord.conf
+sudo supervisorctl reread
+sudo supervisorctl update
 
 
 sudo add-apt-repository ppa:certbot/certbot

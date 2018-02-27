@@ -31,8 +31,9 @@ cd dotfiles
 source ~/.bashrc
 
 cd hitched/
-chmod +x ./conf/launch_gunicorn.sh
-
+pip remove gunicorn
+pip3 install -r requirements.txt
+sudo apt-get install supervisor
 
 
 sudo add-apt-repository ppa:certbot/certbot

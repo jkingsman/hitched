@@ -3,6 +3,6 @@ from message import views
 
 
 urlpatterns = [
-    url(r'^message/$', views.rawMessageDump),
-    url(r'^message/(?P<otherParty>[0-9]+)/$', views.messageThread),
+    url(r'^message/$', views.MessageList.as_view()),
+    url(r'^message/(?P<otherPartyID>[0-9]+)/$', views.MessageThread.as_view()),
 ]

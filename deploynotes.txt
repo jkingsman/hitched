@@ -46,3 +46,35 @@ sudo systemctl restart nginx
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
 sudo apt-get install python-certbot-nginx
+
+
+
+
+
+
+TAKE 2
+
+cd ~/.ssh
+ssh-keygen -t rsa -C "tempgithub@example.com"
+cat id_rsa.pub -> into github
+
+sudo apt install git nginx
+
+sudo chmod 777 srv/
+git clone git@github.com:jkingsman/hitched.git
+
+sudo vim /etc/ssh/sshd_config
+    Port 2222
+    MaxAuthTries 3
+    PermitRootLogin no
+    PubkeyAuthentication yes
+    PasswordAuthentication no
+sudo service sshd restart
+
+sudo service nginx start
+
+sudo yum install python35 python35-devel python35-pip python35-setuptools python35-virtualenv
+
+cd hitched
+sudo pip-3.5 install -r requirements.txt
+sudo pip-3.5 install -r app/requirements.txt

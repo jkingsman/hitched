@@ -1,5 +1,39 @@
 sudo apt-get update
 sudo apt-get install software-properties-common
+sudo apt-get install nginx
+
+sudo ufw allow 'Nginx HTTP'
+
+sudo vim /etc/ssh/sshd_config
+    Port 2222
+    MaxAuthTries 3
+    PermitRootLogin no
+    PubkeyAuthentication yes
+    PasswordAuthentication no
+sudo service sshd restart
+
+
+
+sudo apt-get -y install python3-pip
+pip3 install gunicorn
+
+
+
+cd ~/.ssh
+ssh-keygen -t rsa -C "tempgithub@example.com"
+cat id_rsa.pub -> into github
+
+cd ~
+git clone git@github.com:jkingsman/hitched.git
+git clone git@github.com:jkingsman/dotfiles.git
+cd dotfiles
+./.unpack
+source ~/.bashrc
+
+cd hitched/
+
+
+
 sudo add-apt-repository ppa:certbot/certbot
 sudo apt-get update
-sudo apt-get install python-certbot-nginx 
+sudo apt-get install python-certbot-nginx

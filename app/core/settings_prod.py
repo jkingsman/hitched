@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'sh8vgy5of1ji!l8g14gk**p8v4ifs%d6=ij5&7k7y550fw!k(f'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,

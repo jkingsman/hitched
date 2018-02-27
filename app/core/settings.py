@@ -64,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'core.resources.BlindlyTrustEveryone',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -128,6 +129,8 @@ TIME_ZONE = 'America/Los_Angeles'
 USE_I18N = True
 
 USE_L10N = True
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 NAME="core.wsgi.application"                                  # Name of the application
 DJANGODIR=/home/ubuntu/hitched/app             # Django project directory

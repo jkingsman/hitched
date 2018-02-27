@@ -7,7 +7,7 @@ USER=ubuntu                                        # the user to run as
 GROUP=ubuntu                                     # the group to run as
 NUM_WORKERS=3                                     # how many worker processes should Gunicorn spawn
 DJANGO_SETTINGS_MODULE=settings_prod           # which settings file should Django use
-DJANGO_WSGI_MODULE=core.wsgi.application                     # WSGI module name
+DJANGO_WSGI_MODULE=core.wsgi                     # WSGI module name
 
 echo "Starting $NAME as `whoami`"
 
@@ -17,7 +17,7 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
-exec gunicorn ${DJANGO_WSGI_MODULE}:application \
+gunicorn ${DJANGO_WSGI_MODULE} \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user=$USER --group=$GROUP \

@@ -110,3 +110,8 @@ Added to main http
            index index.html;
        }
     }
+
+call launch_gunicorn from app and background it
+
+sudo ./certbot-auto --webroot --webroot-path /srv/hitched/static certonly --no-bootstrap
+sudo ./certbot-auto renew --webroot --webroot-path /srv/hitched/static --no-bootstrap

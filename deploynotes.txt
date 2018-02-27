@@ -78,3 +78,5 @@ sudo yum install python35 python35-devel python35-pip python35-setuptools python
 cd hitched
 sudo pip-3.5 install -r requirements.txt
 sudo pip-3.5 install -r app/requirements.txt
+
+sudo vim /etc/nginx/nginx.conf

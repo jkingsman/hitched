@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME="hitched"                              #Name of the application (*)
-DJANGODIR=/srv/hitched/app/core          # Django project directory (*)
+DJANGODIR=/srv/hitched/app          # Django project directory (*)
 SOCKFILE=/srv/hitched/app/gunicornsock        # we will communicate using this unix socket (*)
 USER=ec2-user                                        # the user to run as (*)
 GROUP=ec2-user                                   # the group to run as (*)

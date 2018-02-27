@@ -39,6 +39,7 @@ sudo supervisorctl status
 
 sudo cp app/nginx.conf /etc/nginx/sites-available/hitched
 sudo ln -s /etc/nginx/sites-available/hitched /etc/nginx/sites-enabled
+sudo nginx -t
 sudo systemctl restart nginx
 
 

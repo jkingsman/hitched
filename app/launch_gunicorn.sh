@@ -21,6 +21,7 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
 exec /usr/local/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+  --env DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
   --name $NAME \
   --workers $NUM_WORKERS \
   --user $USER \

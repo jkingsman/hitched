@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-NAME="core.wsgi.application"                                  # Name of the application
+NAME="core.wsgi"                                  # Name of the application
 DJANGODIR=/home/ubuntu/hitched/app             # Django project directory
 SOCKFILE=/home/ubuntu/hitched/gunicorn.sock  # we will communicte using this unix socket
 USER=ubuntu                                        # the user to run as

@@ -35,6 +35,11 @@ sudo apt-get install supervisor
 sudo cp app/gunicorn_supervisord.conf /etc/supervisor/conf.d/gunicorn_supervisord.conf
 sudo supervisorctl reread
 sudo supervisorctl update
+sudo supervisorctl status
+
+sudo cp app/nginx.conf /etc/nginx/sites-available/hitched
+sudo ln -s /etc/nginx/sites-available/hitched /etc/nginx/sites-enabled
+sudo systemctl restart nginx
 
 
 sudo add-apt-repository ppa:certbot/certbot

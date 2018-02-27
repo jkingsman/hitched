@@ -1,0 +1,9 @@
+user reg
+
+/registration/ post formdata
+{
+    "username": "jkingsman",
+    "password1": "Ih10fat!",
+    "password2": "Ih0fat!",
+    "email": "jack.kingsman@gmail.com"
+} 

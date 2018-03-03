@@ -15,5 +15,5 @@ gunicorn core.wsgi :application \
   --name hitched \
   --workers 1 \
   --user $USER \
-  --bind=unix:$SOCKFILE && break;
+  --bind=unix:$SOCKFILE \
   --daemon

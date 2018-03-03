@@ -30,4 +30,7 @@ sudo nginx -t
 sudo systemctl restart nginx
 
 
+cd app
+./launch_gunicorn.sh
+
 sudo certbot-auto renew --webroot --webroot-path /srv/hitched/static --no-bootstrap

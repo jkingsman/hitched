@@ -23,8 +23,7 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 export DJANGO_SETTINGS_MODULE="core.settings_prod"
 
 while true;
-
-do exec /usr/local/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+do exec gunicorn ${DJANGO_WSGI_MODULE}:application \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user $USER \

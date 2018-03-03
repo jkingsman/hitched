@@ -15,7 +15,6 @@ cd hitched
 
 pip3 install -r app/requirements.txt
 
-
 sudo cp app/nginx-precert.conf /etc/nginx/sites-available/hitched-precert
 sudo ln -s /etc/nginx/sites-available/hitched-precert /etc/nginx/sites-enabled/hitched-precert
 sudo nginx -t
@@ -29,8 +28,10 @@ sudo ln -s /etc/nginx/sites-available/hitched /etc/nginx/sites-enabled/hitched
 sudo nginx -t
 sudo systemctl restart nginx
 
-
 cd app
 ./launch_gunicorn.sh
 
-sudo certbot-auto renew --webroot --webroot-path /srv/hitched/static --no-bootstrap
+cd ~
+echo "43 6 * * * certbot renew --webroot --webroot-path /srv/hitched/static --no-bootstrap --post-hook \"systemctl reload nginx\"" > mycrontab
+sudo crontab -u root mycrontab
+rm mycrontab

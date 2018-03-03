@@ -10,12 +10,10 @@ cd $DJANGODIR
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
 export DJANGO_SETTINGS_MODULE="core.settings_prod"
 
-while true;
 
-do exec gunicorn core.wsgi :application \
+gunicorn core.wsgi :application \
   --name hitched \
   --workers 1 \
   --user $USER \
   --bind=unix:$SOCKFILE && break;
   --daemon
-done

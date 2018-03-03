@@ -2,3 +2,5 @@ Django==2.0.2
 django-filter==1.1.0
 djangorestframework==3.7.7
 django-extensions==2.0.0
+gunicorn==19.7.1
+uwsgi==2.0.17
